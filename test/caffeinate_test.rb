@@ -8,21 +8,23 @@ class TestCaffeinate < Minitest::Test
   def setup
     @caffeinate = 
       Caffeinate::Caffeinate.new(
-        :userEmail      => "myemail@mydomain.com", 
-        :userPassword   => "password1",
-        :senderName     => "Sunny",
-        :senderEmail    => "sender-email@mydomain.com",
-        :recipientName  => "Thomas",
-        :recipientEmail => "thomas@tamcgoey.com",
-        :message        => "Thanks Message Here!",
-        :amount         => "5",
-        :cvn            => "123",
-        :cardTheme      => 3
+        :userEmail              => "login@example.com", 
+        :userPassword           => "password1",
+        :senderName             => "Sunny",
+        :senderEmail            => "sunny@example.com",
+        :recipientName          => "Thomas",
+        :recipientEmail         => "thomas@example.com",
+        :message                => "Thanks Bud!",
+        :amount                 => "5",
+        :cardTheme              => 3,
+        :paymentMethod          => :gift,
+#       :cvn                    => "123",
+        :dev                    => true
       )
   end
 
   def test_caffeinate_login_credentials_set_properly
-    assert_equal "myemail@mydomain.com", @caffeinate.userEmail
+    assert_equal "login@example.com", @caffeinate.userEmail
     assert_equal "password1", @caffeinate.userPassword
   end
 
