@@ -33,9 +33,11 @@ If an error isn't thrown, the egift will be sent to your recipient. You'll get a
     :recipientName  => "Thomas",
     :recipientEmail => "thomas@tamcgoey.com",
     :message        => "Thanks Message Here!",
+    :cardTheme      => 3,
     :amount         => "5",
-    :cvn            => "123",
-    :cardTheme      => 3
+    :paymentMethod  => :credit, # Or :gift
+    :cvn            => "123"
+#   :dev            => true     # Prints processing steps
   )
 ```
 
@@ -46,6 +48,10 @@ rescue Exception => ex
   puts "ERROR (#{ex.class}) => #{ex.message}"
 end
 ```
+Payment methods (credit or gift) will use your default payment method. A CVN is only needed if you use credit for the payment method.
+
+Dev mode does not need to be set unless you want to see current process messages.
+
 
 ## Limitations
 Currently, I have only tested this gem with Starbucks.com eGifts. The eGift should work fine in North America.
