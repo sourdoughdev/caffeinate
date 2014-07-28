@@ -8,13 +8,13 @@ class TestCaffeinate < Minitest::Test
   def setup
     @caffeinate = 
       Caffeinate::Caffeinate.new(
-        :userEmail              => "login@example.com", 
+        :userEmail              => "useremailhere@test.com", 
         :userPassword           => "password1",
         :senderName             => "Sunny",
-        :senderEmail            => "sunny@example.com",
-        :recipientName          => "Thomas",
-        :recipientEmail         => "thomas@example.com",
-        :message                => "Thanks Bud!",
+        :senderEmail            => "senderemail@test.com",
+        :recipientName          => "Buddy",
+        :recipientEmail         => "buddy@test.com",
+        :message                => "A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.",
         :amount                 => "5",
         :cardTheme              => 3,
         :paymentMethod          => :gift,
@@ -24,7 +24,7 @@ class TestCaffeinate < Minitest::Test
   end
 
   def test_caffeinate_login_credentials_set_properly
-    assert_equal "login@example.com", @caffeinate.userEmail
+    assert_equal "useremailhere@test.com", @caffeinate.userEmail
     assert_equal "password1", @caffeinate.userPassword
   end
 
